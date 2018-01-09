@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="My Profile" />
+        <item
+            android:id="@+id/nav_otp"
+            android:icon="@drawable/ic_vpn_key_black_24dp"
+            android:title="My OTP" />
+
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_power_settings_new_black_24dp"
+            android:title="About" />
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Share OTP" />
+        <item
+            android:id="@+id/nav_send"
+            android:icon="@drawable/ic_menu_send"
+            android:title="Send" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_arrow_back_black_24dp"
+            android:title="Log Out" />
+
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="Exit" />
+
+    </group>
+</menu>

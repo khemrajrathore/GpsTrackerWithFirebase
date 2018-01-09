@@ -1,0 +1,110 @@
+[
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_tint_default.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_tint_default.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_light.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_btn_colored_text_material.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_btn_colored_borderless_text_material.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_tint_switch_track.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_search_url_text.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_tint_seek_thumb.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
+        "source": "/root/.android/build-cache/2332be3a8ede4dd2cf3c3f01514241963122995d/output/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_tint_switch_thumb.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_tint_switch_thumb.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_tint_edittext.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/wallet_primary_text_holo_light.xml",
+        "source": "/root/.android/build-cache/24f242d533ffbd28d4a339a30b7116927fa7a753/output/res/color/wallet_primary_text_holo_light.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
+        "source": "/root/.android/build-cache/2332be3a8ede4dd2cf3c3f01514241963122995d/output/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/design_error.xml",
+        "source": "/root/.android/build-cache/05a4c8b717697cd7e4cc06b1f8c6910222f9f8ba/output/res/color/design_error.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/design_tint_password_toggle.xml",
+        "source": "/root/.android/build-cache/05a4c8b717697cd7e4cc06b1f8c6910222f9f8ba/output/res/color/design_tint_password_toggle.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_tint_spinner.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/wallet_secondary_text_holo_dark.xml",
+        "source": "/root/.android/build-cache/24f242d533ffbd28d4a339a30b7116927fa7a753/output/res/color/wallet_secondary_text_holo_dark.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/abc_tint_btn_checkable.xml",
+        "source": "/root/.android/build-cache/4f152c8917bd24ac35497eb046e6a97de910b270/output/res/color/abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_tint.xml",
+        "source": "/root/.android/build-cache/2332be3a8ede4dd2cf3c3f01514241963122995d/output/res/color/common_google_signin_btn_tint.xml"
+    }
+]

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/GridLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".MyProfile"
+    android:background="#FFECB8">
+
+
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:textColor="#ff0000"
+        android:text="@string/name1"
+        android:textSize="15dp"
+        tools:ignore="SpUsage"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="51dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email1"
+        android:textSize="15dp"
+        android:textColor="#ff0000"
+        tools:ignore="SpUsage"
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginTop="41dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/number1"
+        android:textColor="#ff0000"
+        android:textSize="15dp"
+        tools:ignore="SpUsage"
+        android:layout_above="@+id/textViewotp"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_marginBottom="46dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/otp1"
+        android:textSize="15dp"
+        tools:ignore="SpUsage"
+        android:textColor="#ff0000"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_marginBottom="62dp" />
+
+    <TextView
+        android:id="@+id/textViewname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_marginStart="80dp"
+        android:layout_toEndOf="@+id/textView5"
+        android:gravity="right"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/textViewemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textViewname"
+        android:layout_alignTop="@+id/textView4"
+        android:gravity="right"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/textViewnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textViewemail"
+        android:layout_alignTop="@+id/textView5"
+        android:gravity="right"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/textViewotp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textViewnumber"
+        android:layout_alignTop="@+id/textView7"
+        android:gravity="right"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        tools:ignore="RtlHardcoded" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/myprofile"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        tools:ignore="ContentDescription" />
+
+
+</RelativeLayout>

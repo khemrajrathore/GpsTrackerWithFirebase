@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFECB8"
+    tools:context="com.buckleup.gpstracker.Welcome">
+
+    <TableRow
+        android:layout_marginTop="60dp">
+        <ImageView
+            android:id="@+id/mylocation"
+            android:layout_width="170dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_mylocation"
+            android:onClick="showMyLocation"
+            tools:ignore="ContentDescription" />
+        <ImageView
+            android:id="@+id/myotpgenerator"
+            android:layout_width="170dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_myotp"
+            android:onClick="otpGenerator"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/mylocationtext"
+            android:layout_width="170dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="@string/my_location"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/myotptext"
+            android:layout_width="170dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="@string/generate_otp"
+            android:textStyle="bold" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_marginTop="20dp">
+        <ImageView
+            android:id="@+id/myfriendlocation"
+            android:layout_width="170dp"
+            android:layout_height="200dp"
+            android:onClick="showFriendLocation"
+            android:src="@drawable/ic_myfriendlocation"
+            tools:ignore="ContentDescription" />
+        <ImageView
+            android:id="@+id/myunknown"
+            android:layout_width="170dp"
+            android:layout_height="200dp"
+            android:onClick="feedback"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/feedback"
+            tools:ignore="ContentDescription,RtlHardcoded" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/myfriendlocationtext"
+            android:layout_width="170dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="@string/check_friend_location"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/myunknowntext"
+            android:layout_width="170dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="@string/feedback2"
+            android:textStyle="bold" />
+    </TableRow>
+</TableLayout>

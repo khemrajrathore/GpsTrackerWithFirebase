@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/interpolator/mr_linear_out_slow_in.xml",
+        "source": "/root/.android/build-cache/4ae0caccb24db3f1549164799345b835b71f05f6/output/res/interpolator/mr_linear_out_slow_in.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/interpolator/mr_fast_out_slow_in.xml",
+        "source": "/root/.android/build-cache/4ae0caccb24db3f1549164799345b835b71f05f6/output/res/interpolator/mr_fast_out_slow_in.xml"
+    }
+]

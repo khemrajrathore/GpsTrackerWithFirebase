@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.buckleup.gpstracker">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/applogo"
+        android:label="GpsTracker"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Introduction">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignIn" />
+        <activity
+            android:name=".Welcome"
+            android:label="GpsTracker"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Register" />
+        <activity
+            android:name=".FriendValidation"
+            android:label="GpsTracker"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".FriendMapsActivity" />
+        <activity android:name=".MapsActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyB_zHH7dgPw4C6feZGqtdVhw3oESCUhxmg" />
+
+        <activity android:name=".MyProfile" />
+        <activity android:name=".ForgetPassword" />
+        <activity android:name=".AboutUs" />
+        <activity android:name=".Feedback" />
+
+        <service
+            android:name=".LocationService"
+            android:enabled="true" />
+
+        <activity android:name=".OtpDatePicker" />
+        <activity android:name=".OtpTimePicker"></activity>
+    </application>
+
+</manifest>

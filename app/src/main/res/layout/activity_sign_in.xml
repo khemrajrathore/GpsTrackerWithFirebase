@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFECB8"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_signin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFECB8"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.buckleup.gpstracker.SignIn">
+
+    <EditText
+        android:id="@+id/logphnumber"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="96dp"
+        android:layout_marginLeft="90dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="text"
+        tools:ignore="RtlHardcoded" />
+
+    <EditText
+        android:id="@+id/logpassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/logphnumber"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:layout_marginLeft="90dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/logregbutton"
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginLeft="50dp"
+        android:elevation="1dp"
+        android:onClick="openRegister"
+        android:text="@string/register"
+        android:textColor="@color/cast_expanded_controller_text_color"
+        android:background="@drawable/my_button"
+        android:layout_below="@+id/logbutton"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:id="@+id/logbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:background="@drawable/my_button"
+        android:onClick="openWelcome"
+        android:text="@string/sign_in"
+        android:textColor="@color/cast_expanded_controller_text_color"
+        android:layout_below="@+id/imageButton2"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/ic_bluephone"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="110dp"
+        android:layout_alignLeft="@+id/logphnumber"
+        android:layout_alignParentStart="true"
+        tools:ignore="ContentDescription,RtlHardcoded" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_bluelock"
+        android:layout_alignLeft="@+id/logpassword"
+        android:layout_marginTop="159dp"
+        android:layout_alignStart="@+id/imageButton"
+        tools:ignore="ContentDescription,RtlHardcoded" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_blueregister"
+        android:layout_alignBottom="@+id/logregbutton"
+        android:layout_toStartOf="@+id/imageButton2"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logregbutton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:onClick="forgetPassword"
+        android:text="@string/forget_password"
+        android:textSize="20sp" />
+</RelativeLayout>
+</ScrollView>

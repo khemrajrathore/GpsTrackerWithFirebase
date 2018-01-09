@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFECB8"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.buckleup.gpstracker.Feedback">
+
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/write_your_feedback_here"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        tools:ignore="MissingConstraints,SpUsage"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="78dp"
+        android:layout_below="@+id/textView9"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp"
+        android:id="@+id/relativeLayout">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints,UselessParent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <EditText
+                android:id="@+id/feedbackmsg"
+                android:layout_width="368dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/feedback1"
+                android:inputType="textMultiLine"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="148dp" />
+        </ScrollView>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="71dp"
+        android:background="@drawable/my_button"
+        android:onClick="sendFeedback"
+        android:text="@string/send_feedback"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

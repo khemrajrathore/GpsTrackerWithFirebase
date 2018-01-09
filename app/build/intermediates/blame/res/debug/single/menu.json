@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/menu/welcome.xml",
+        "source": "/home/khemraj/Khemraj/GpsTracker/app/src/main/res/menu/welcome.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/menu/activity_welcome_drawer.xml",
+        "source": "/home/khemraj/Khemraj/GpsTracker/app/src/main/res/menu/activity_welcome_drawer.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/menu/activity_friend_validation_drawer.xml",
+        "source": "/home/khemraj/Khemraj/GpsTracker/app/src/main/res/menu/activity_friend_validation_drawer.xml"
+    },
+    {
+        "merged": "/home/khemraj/Khemraj/GpsTracker/app/build/intermediates/res/merged/debug/menu/friend_validation.xml",
+        "source": "/home/khemraj/Khemraj/GpsTracker/app/src/main/res/menu/friend_validation.xml"
+    }
+]

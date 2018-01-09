@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<RelativeLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="ExtraText">
+
+
+    -<LinearLayout
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:weightSum="5"
+    android:orientation="horizontal"
+    android:id="@+id/ll1">
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:id="@+id/etLocationEntry"
+        android:layout_weight="4"
+        tools:ignore="LabelFor,TextFields" />
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:id="@+id/btSearch"
+        android:layout_weight="1"
+        android:text="@string/go"/>
+
+</LinearLayout>
+
+    <fragment
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/map"
+        tools:context="com.buckleup.gpstracker.MapsActivity"
+        android:layout_below="@+id/ll1"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        xmlns:tools="http://schemas.android.com/tools" />
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/btMark"
+        android:text="@string/mark"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/btSatellite"
+        android:text="@string/sat"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/btMark"
+        tools:ignore="RtlHardcoded" />
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/btClear"
+        android:text="@string/clear"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/btSatellite"
+        tools:ignore="RtlHardcoded" />
+
+    <ZoomControls
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/zcZoom"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/btMark"
+        tools:ignore="RtlHardcoded" />
+
+</RelativeLayout>
