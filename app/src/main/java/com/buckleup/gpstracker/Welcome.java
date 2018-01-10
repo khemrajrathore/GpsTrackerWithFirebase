@@ -31,6 +31,7 @@ public class Welcome extends AppCompatActivity
     String email;
     static String otp;
     String password;
+    String uid;
     public static int dday = 0;
     public static int dmonth = 0;
     public static int dyear = 0;
@@ -42,7 +43,6 @@ public class Welcome extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         Intent intent = getIntent();
-        Toast.makeText(this, "Please wait till we establish your connection", Toast.LENGTH_LONG);
 
 
         phonenumber = intent.getStringExtra("phonenumber");
@@ -50,6 +50,7 @@ public class Welcome extends AppCompatActivity
         email = intent.getStringExtra("email");
         otp = intent.getStringExtra("otp");
         password = intent.getStringExtra("password");
+        uid = intent.getStringExtra("uid");
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -71,6 +72,7 @@ public class Welcome extends AppCompatActivity
     public void showMyLocation(View view) {
         Intent intent = new Intent(this, MapsActivity.class);
         intent.putExtra("phonenumber", phonenumber);
+        intent.putExtra("uid",uid);
         startActivity(intent);
     }
     @Override
@@ -259,6 +261,7 @@ public class Welcome extends AppCompatActivity
 
         Intent intent = new Intent(this,OtpDatePicker.class);
         intent.putExtra("phonenumber",phonenumber);
+        intent.putExtra("uid",uid);
         startActivity(intent);
 
 

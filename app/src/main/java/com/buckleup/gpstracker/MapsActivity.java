@@ -35,6 +35,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,6 +55,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Double myLatitude = null;
     Double myLongitude = null;
     String phonenumber;
+    String uid;
     private GoogleApiClient googleApiClient;
     private LocationRequest locationRequest;
     protected static final String TAG = "MapsActvity";
@@ -62,6 +65,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         phonenumber = intent.getStringExtra("phonenumber");
+        uid = intent.getStringExtra("uid");
         setContentView(R.layout.activity_maps);
 
         //myLatitude = Double.parseDouble(LocationService.finlat);
@@ -277,7 +281,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         latitude = myLatitude.toString();
         longitude = myLongitude.toString();
 
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+        myRef = myRef.child("Register").child(uid);
+        myRef.child("latitude").setValue(latitude);
+        myRef.child("longitude").setValue(longitude);
+
+        /*Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
@@ -304,7 +313,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         LatLonToDB registerRequest = new LatLonToDB(phonenumber,latitude,longitude,"ldkfjlskd",responseListener);
         RequestQueue queue = Volley.newRequestQueue(MapsActivity.this);
-        queue.add(registerRequest);
+        queue.add(registerRequest);*/
 
 
     }

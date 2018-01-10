@@ -12,6 +12,7 @@ import java.util.StringTokenizer;
 public class OtpDatePicker extends AppCompatActivity {
 
     String phonenumber;
+    String uid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +20,7 @@ public class OtpDatePicker extends AppCompatActivity {
 
         Intent intent = getIntent();
         phonenumber = intent.getStringExtra("phonenumber");
+        uid = intent.getStringExtra("uid");
 
     }
 
@@ -33,6 +35,7 @@ public class OtpDatePicker extends AppCompatActivity {
         finish();
         Intent intent = new Intent(this,OtpTimePicker.class);
         intent.putExtra("phonenumber",phonenumber);
+        intent.putExtra("uid",uid);
         startActivity(intent);
 
     }

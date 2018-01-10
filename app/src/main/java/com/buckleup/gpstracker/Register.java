@@ -20,6 +20,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 /**
  * Created by Admin on 2/15/2017.
  */
@@ -27,6 +30,9 @@ import com.google.firebase.auth.FirebaseUser;
 public class Register extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,13 +78,13 @@ public class Register extends AppCompatActivity {
         EditText ename = (EditText)findViewById(R.id.regname);
         EditText eemail = (EditText)findViewById(R.id.regemail);
 
-        String name = ename.getText().toString();
+        final String fname = ename.getText().toString();
         String email = eemail.getText().toString();
-        String phonenumber = ephonenumber.getText().toString();
+        final String fphonenumber = ephonenumber.getText().toString();
         String password = epassword.getText().toString();
 
         boolean vemail = isValidEmail(email);
-        boolean vphonenumber = isValidNumber(phonenumber);
+        boolean vphonenumber = isValidNumber(fphonenumber);
 
         if(vemail&&vphonenumber)
         {
@@ -90,11 +96,29 @@ public class Register extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 Log.d("createduser", "createUserWithEmail:onComplete:" + task.isSuccessful());
                                 Toast.makeText(getApplicationContext(),"Registration Success...",Toast.LENGTH_LONG).show();
+
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                if(user!=null)
+                                {
+                                    String email = user.getEmail();
+                                    String name = fname;
+                                    String phonenumber = fphonenumber;
+                                    String uid = user.getUid();
+
+                                    myRef = myRef.child("Register").child(uid);
+                                    myRef.child("email").setValue(email);
+                                    myRef.child("name").setValue(name);
+                                    myRef.child("phonenumber").setValue(phonenumber);
+                                    myRef.child("otp").setValue("0");
+                                    myRef.child("otpvalidity").setValue(System.currentTimeMillis());
+
+                                }
+
                                 Intent intent = new Intent(Register.this,SignIn.class);
                                 startActivity(intent);
                             }
 
-                            if(!task.isSuccessful()) {
+                            else {
                                 Toast.makeText(getApplicationContext(),"Registration failed...",
                                         Toast.LENGTH_SHORT).show();
                             }

@@ -19,6 +19,9 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -35,6 +38,11 @@ public class LocationService extends Service {
     static String finlat;
     static String finlon;
     public String phonenumber = null;
+    String uid ="";
+
+    private FirebaseAuth mAuth;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
 
     //public String password = null;
 
@@ -51,6 +59,8 @@ public class LocationService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         phonenumber = intent.getStringExtra("phonenumber");
+        uid = intent.getStringExtra("uid");
+        myRef = myRef.child("Register").child(uid);
         /*locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         listener = new MyLocationListener();
         while(true) {
@@ -75,6 +85,7 @@ public class LocationService extends Service {
     public void onCreate()
     {
         super.onCreate();
+        mAuth = FirebaseAuth.getInstance();
         //intent = new Intent(BROADCAST_ACTION);
     }
 
@@ -216,7 +227,13 @@ public class LocationService extends Service {
 
             }
 
-            Response.Listener<String> responseListener = new Response.Listener<String>() {
+
+            myRef.child("latitude").setValue(latitude);
+            myRef.child("longitude").setValue(longitude);
+
+
+
+            /*Response.Listener<String> responseListener = new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     try {
@@ -243,7 +260,7 @@ public class LocationService extends Service {
 
             LatLonToDB registerRequest = new LatLonToDB(phonenumber,latitude,longitude,userlog,responseListener);
             RequestQueue queue = Volley.newRequestQueue(LocationService.this);
-            queue.add(registerRequest);
+            queue.add(registerRequest);*/
 
 
 

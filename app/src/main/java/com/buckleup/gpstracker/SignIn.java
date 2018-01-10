@@ -19,12 +19,35 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 
 public class SignIn extends AppCompatActivity{
-        private FirebaseAuth mAuth;
-        private FirebaseAuth.AuthStateListener mAuthListener;
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
+    Information info = new Information();
+    String uid = "";
+
+
+    String name;
+    String email;
+    String phonenumber;
+    String otp;
+    Long otpvalidity ;
+    String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,12 +100,12 @@ public class SignIn extends AppCompatActivity{
     public void openWelcome(View view) {
 
         Toast.makeText(this,"Please Wait...",Toast.LENGTH_SHORT).show();
-        EditText ephonenumber = (EditText) findViewById(R.id.logphnumber);
+        EditText ephonenumber = (EditText) findViewById(R.id.logphnumber);//This is email
         EditText epassword = (EditText) findViewById(R.id.logpassword);
-        final String email = ephonenumber.getText().toString();
-        final String password = epassword.getText().toString();
+        final String vemail = ephonenumber.getText().toString(); //this is email
+        password = epassword.getText().toString();
 
-        mAuth.signInWithEmailAndPassword(email, password)
+        mAuth.signInWithEmailAndPassword(vemail, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -91,7 +114,47 @@ public class SignIn extends AppCompatActivity{
                         {
                             Log.d("signin", "signInWithEmail:onComplete:" + task.isSuccessful());
                             Toast.makeText(getApplicationContext(),"SignIn Successfull",Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(),Welcome.class));
+                            //startActivity(new Intent(getApplicationContext(),Welcome.class));
+
+                            //Firebase changes
+
+                            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                            if (user != null) {
+                                uid = user.getUid();
+                            }
+
+
+
+                            myRef = myRef.child("Register").child(uid);
+                            myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    // This method is called once with the initial value and again
+                                    // whenever data at this location is updated.
+
+                                    info  = dataSnapshot.getValue(Information.class);
+
+                                    phonenumber = info.getPhonenumber();
+                                    email = info.getEmail();
+                                    otp = info.getOtp();
+                                    name = info.getName();
+                                    otpvalidity = info.getOtpvalidity();
+                                    Log.d("signindata","Value of name is : "+info.getPhonenumber());
+                                    Log.d("readsuccess", "Value is: " + phonenumber + email + otp + name+"   "+otpvalidity +" "+otpvalidity.getClass().getName());
+
+                                    otpvalidityupdate();
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError error) {
+                                    // Failed to read value
+                                    Log.w("databasereaderrror", "Failed to read value.", error.toException());
+                                }
+                            });
+
+
+
                         }
 
                         // If sign in fails, display a message to the user. If sign in succeeds
@@ -170,6 +233,45 @@ public class SignIn extends AppCompatActivity{
         SigninRequest signinRequest = new SigninRequest(phonenumber, password, responseListener);
         RequestQueue queue = Volley.newRequestQueue(SignIn.this);
         queue.add(signinRequest);*/
+
+
+    }
+
+    public void otpvalidityupdate(){
+        //Long otpvalidity = jsonResponse.getLong("otpvalidity");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+
+        Log.d("otpvalidity",""+info.getPhonenumber());
+        long milliSeconds= otpvalidity;
+        Log.d("Milliseconds",milliSeconds+"");
+
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.setTimeInMillis(milliSeconds);
+        Log.d("Time",formatter.format(calendar.getTime()));
+        Welcome.otpvalidity  = formatter.format(calendar.getTime());
+
+
+        Intent intent1 = new Intent(SignIn.this,LocationService.class);
+        intent1.putExtra("phonenumber", phonenumber);
+        intent1.putExtra("uid",uid);
+        //display(phonenumber);
+        startService(intent1);
+
+        Intent intent = new Intent(SignIn.this, Welcome.class);
+        intent.putExtra("phonenumber", phonenumber);
+        intent.putExtra("name", name);
+        intent.putExtra("password", password);
+        intent.putExtra("email", email);
+        intent.putExtra("otp", otp);
+        intent.putExtra("uid",uid);
+
+
+        SignIn.this.startActivity(intent);
+        EditText ephonenumber =(EditText)findViewById(R.id.logphnumber);
+        EditText epassword = (EditText)findViewById(R.id.logpassword);
+
+        epassword.setText("");
 
 
     }

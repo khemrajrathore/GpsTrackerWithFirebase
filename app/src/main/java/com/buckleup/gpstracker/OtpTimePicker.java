@@ -16,6 +16,10 @@ import android.widget.TimePicker;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,11 +36,14 @@ public class OtpTimePicker extends AppCompatActivity {
     String phonenumber;
     long millisec;
     String myDate = null;
+    String uid ;
+    String otp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp_time_picker);
         Intent intent = getIntent();
+        uid = intent.getStringExtra("uid");
         phonenumber = intent.getStringExtra("phonenumber");
     }
 
@@ -64,7 +71,8 @@ public class OtpTimePicker extends AppCompatActivity {
         {
             str+=rand.nextInt(9);
         }
-        Response.Listener<String> responseListener = new Response.Listener<String>(){
+        otp = str;
+        /*Response.Listener<String> responseListener = new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
                 try {
@@ -88,7 +96,9 @@ public class OtpTimePicker extends AppCompatActivity {
         };
         otpupdaterequest registerRequest = new otpupdaterequest(phonenumber,str,millisec+"",responseListener);
         RequestQueue queue = Volley.newRequestQueue(OtpTimePicker.this);
-        queue.add(registerRequest);
+        queue.add(registerRequest);*/
+
+
 
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.otpdisplay);
@@ -98,7 +108,7 @@ public class OtpTimePicker extends AppCompatActivity {
         TextView myvalidity = (TextView) dialog.findViewById(R.id.otpdisplay_validity);
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
-        long milliSeconds= millisec;
+        final long milliSeconds= millisec;
         Log.d("Milliseconds",milliSeconds+"");
 
         Calendar calendar = Calendar.getInstance();
@@ -113,6 +123,12 @@ public class OtpTimePicker extends AppCompatActivity {
         dialogButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+
+                Log.d("otp",otp + milliSeconds+"   "+uid);
+                myRef = myRef.child("Register").child(uid);
+                myRef.child("otp").setValue(otp);
+                myRef.child("otpvalidity").setValue(millisec);
                 dialog.dismiss();
                 finish();
             }
