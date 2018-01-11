@@ -12,11 +12,15 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONObject;
 
 public class Feedback extends AppCompatActivity {
     String name = null;
+    String phonenumber;
+    String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,8 @@ public class Feedback extends AppCompatActivity {
         setContentView(R.layout.activity_feedback);
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
-
+        phonenumber = intent.getStringExtra("phonenumber");
+        uid = intent.getStringExtra("uid");
     }
 
     public void sendFeedback(View view)
@@ -33,7 +38,15 @@ public class Feedback extends AppCompatActivity {
         final EditText emsg = (EditText)findViewById(R.id.feedbackmsg);
         String msg = emsg.getText().toString();
 
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("Feedback");
+        myRef.child(uid).child("name").setValue(name);
+        myRef.child(uid).child("feedback").setValue(msg);
+        Toast.makeText(getApplicationContext(),"Thank you for your feedback...",Toast.LENGTH_SHORT).show();
+
+
+
+
+        /*Response.Listener<String> responseListener = new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
@@ -63,7 +76,7 @@ public class Feedback extends AppCompatActivity {
 
         FeedbackRequest signinRequest = new FeedbackRequest(name,msg, responseListener);
         RequestQueue queue = Volley.newRequestQueue(Feedback.this);
-        queue.add(signinRequest);
+        queue.add(signinRequest);*/
 
     }
 

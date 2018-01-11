@@ -34,11 +34,17 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class FriendValidation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -289,8 +295,47 @@ public class FriendValidation extends AppCompatActivity
         friendnumber = fnumber.getText().toString();
         friendotp = fotp.getText().toString();
 
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference notepadRef = rootRef.child("Register");
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int flg=0;
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                    String tlatitude = ds.child("latitude").getValue(String.class);
+                    String tlongitude = ds.child("longitude").getValue(String.class);
+                    String totp = ds.child("otp").getValue(String.class);
+                    String tphonenumber = ds.child("phonenumber").getValue(String.class);
+                    Long totpvalidity = ds.child("otpvalidity").getValue(Long.class);
+                    Log.d("TAG", tphonenumber + " / " + totp + " / " + totpvalidity + " / ");
 
-        Response.Listener<String> responseListener = new Response.Listener<String>(){
+                    if(friendnumber.equals(tphonenumber)) {
+                        flg=1;
+                        if (!friendotp.equals(totp)) {
+                            Toast.makeText(getApplicationContext(), "Plz enter correct otp", Toast.LENGTH_SHORT).show();
+                        } else if (totpvalidity < System.currentTimeMillis()) {
+                            Toast.makeText(getApplicationContext(), "Validity of otp has expired request for new one...", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Intent intent = new Intent(getApplicationContext(), FriendMapsActivity.class);
+                            intent.putExtra("latitude", tlatitude);
+                            intent.putExtra("longitude", tlongitude);
+                            startActivity(intent);
+                        }
+                    }
+                }
+                if(flg==0)
+                {
+                    Toast.makeText(getApplicationContext(),"The phonenumber is not registered with us..",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        };
+        notepadRef.addListenerForSingleValueEvent(eventListener);
+
+
+        /*Response.Listener<String> responseListener = new Response.Listener<String>(){
             @Override
             public void onResponse(String response) {
 
@@ -338,7 +383,7 @@ public class FriendValidation extends AppCompatActivity
         };
         FriendLatLongRequest registerRequest = new FriendLatLongRequest(friendnumber,friendotp,responseListener);
         RequestQueue queue = Volley.newRequestQueue(FriendValidation.this);
-        queue.add(registerRequest);
+        queue.add(registerRequest);*/
 
 
     }

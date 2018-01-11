@@ -62,8 +62,8 @@ public class FriendMapsActivity extends FragmentActivity implements OnMapReadyCa
         //userlog = intent.getStringExtra("userlog");
         //Log.d("Check","After Calling userlog "+userlog);
         try {
-            //fLatitude = Double.parseDouble(intent.getStringExtra("latitude"));
-            //fLongitude = Double.parseDouble(intent.getStringExtra("longitude"));
+            fLatitude = Double.parseDouble(intent.getStringExtra("latitude"));
+            fLongitude = Double.parseDouble(intent.getStringExtra("longitude"));
         }
         catch(Exception e){}
         setContentView(R.layout.activity_friend_maps);
@@ -77,8 +77,8 @@ public class FriendMapsActivity extends FragmentActivity implements OnMapReadyCa
         Log.d("Time",formatter.format(calendar.getTime()));
         dateandtime = formatter.format(calendar.getTime());*/
 
-        myLatitude = Double.parseDouble(LocationService.finlat);
-        myLongitude = Double.parseDouble(LocationService.finlon);
+        //myLatitude = Double.parseDouble(LocationService.finlat);
+        //myLongitude = Double.parseDouble(LocationService.finlon);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()

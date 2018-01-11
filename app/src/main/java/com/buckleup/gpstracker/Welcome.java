@@ -308,6 +308,8 @@ public class Welcome extends AppCompatActivity
     {
         Intent intent = new Intent(this,Feedback.class);
         intent.putExtra("name",name);
+        intent.putExtra("uid",uid);
+        intent.putExtra("phonenumber",phonenumber);
         startActivity(intent);
     }
 }

@@ -51,8 +51,14 @@ public class OtpTimePicker extends AppCompatActivity {
     public void getTime(View view) throws ParseException {
 
         TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
-        Welcome.thour = timePicker.getHour();
-        Welcome.tmin = timePicker.getMinute();
+        if(Build.VERSION.SDK_INT < 23) {
+            Welcome.thour = timePicker.getCurrentHour();
+            Welcome.tmin = timePicker.getCurrentMinute();
+        }
+        else {
+            Welcome.thour = timePicker.getHour();
+            Welcome.tmin = timePicker.getMinute();
+        }
         myDate = Welcome.dyear+"/"+Welcome.dmonth+"/"+Welcome.dday+" "+Welcome.thour+":"+
         Welcome.tmin+":"+"00";
 
