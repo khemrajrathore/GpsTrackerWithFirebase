@@ -1,0 +1,81 @@
+Custom Non taint default semantics
+"java.lang.Boolean.parseBoolean:boolean(java.lang.String)" 0->0 1->1
+"java.lang.Integer.parseInt:int(java.lang.String)" 0->0 1->1
+"java.lang.Long.parseLong:long(java.lang.String)" 0->0 1->1
+"java.lang.String.equals:boolean(java.lang.Object)" 0->0 1->1 2->2
+"java.lang.String.length:int()" 0->0 1->1
+"java.lang.System.currentTimeMillis:long()" 0->0
+"java.lang.System.exit:void(int)" 0->0 1->1
+"java.util.Iterator.hasNext:boolean()" 0->0 1->1
+"java.util.Random.nextInt:int(int)" 0->0 1->1 2->2
+------------------------------------------
+Custom semanticFromConfig semantics
+"android.text.TextUtils.isEmpty:<unresolvedSignature>(1)"
+"android.text.TextUtils.isEmpty:boolean(java.lang.String)"
+"com.braintreepayments.api.models.PaymentMethodNonce.getNonce:<unresolvedSignature>(0)" 0->-1
+"com.braintreepayments.api.models.PaymentMethodNonce.getNonce:java.lang.String()" 0->-1
+"java.lang.String.replace:java.lang.String(java.lang.CharSequence,java.lang.CharSequence)" 0->-1 1->-1 2->-1
+"java.lang.String.split:java.lang.String[](java.lang.String)" 0->-1 1->-1
+"javax.persistence.EntityManager.find:<unresolvedSignature>(2)" 0->-1 1->-1 2->-1
+"javax.persistence.Query.setParameter:<unresolvedSignature>(2)" 1->0 2->0
+"org.apache.http.HttpResponse.getStatusLine:<unresolvedSignature>(0)" 0->0
+"org.apache.http.HttpResponse.getStatusLine:org.apache.http.StatusLine()" 0->0
+"org.apache.http.StatusLine.getStatusCode:<unresolvedSignature>(0)"
+"org.apache.http.StatusLine.getStatusCode:boolean()"
+------------------------------------------
+Custom customNonPersonalMemberSemantics semantics
+"com.buckleup.gpstracker.Information.getName:java.lang.String()" 0->0
+"com.buckleup.gpstracker.Information.getOtp:java.lang.String()" 0->0
+"com.buckleup.gpstracker.Information.getOtpvalidity:java.lang.Long()" 0->0
+------------------------------------------
+Custom specialNonTaintDefaultSemantics semantics
+"java.util.Calendar.setTimeInMillis:void(long)" 0->0 1->0 1->1 2->0 2->2
+"java.util.Date.getTime:long()" 0->0 1->0 1->1
+------------------------------------------
+Custom customSinkSemantics semantics
+"android.util.Log.d:<unresolvedSignature>(2)" 0->-1 0->0 1->-1 1->1 2->-1 2->2
+"android.util.Log.i:<unresolvedSignature>(2)" 0->-1 0->0 1->-1 1->1 2->-1 2->2
+"android.util.Log.w:<unresolvedSignature>(3)" 0->-1 0->0 1->-1 1->1 2->-1 2->2 3->-1 3->3
+"com.google.android.gms.location.LocationRequest.<init>:void()" 0->-1 0->0
+"com.google.android.gms.location.LocationRequest.setFastestInterval:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.location.LocationRequest.setInterval:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.location.LocationRequest.setPriority:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.maps.CameraUpdateFactory.newLatLng:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.maps.CameraUpdateFactory.zoomIn:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.android.gms.maps.CameraUpdateFactory.zoomOut:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.android.gms.maps.GoogleMap.addMarker:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.maps.GoogleMap.animateCamera:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.maps.GoogleMap.clear:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.android.gms.maps.GoogleMap.getMapType:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.android.gms.maps.GoogleMap.moveCamera:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.maps.GoogleMap.setMapType:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.maps.GoogleMap.setMyLocationEnabled:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.maps.GoogleMap.setOnMapClickListener:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.maps.SupportMapFragment.getMapAsync:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.maps.model.LatLng.<init>:<unresolvedSignature>(2)" 0->-1 0->0 1->-1 1->1 2->-1 2->2
+"com.google.android.gms.maps.model.MarkerOptions.<init>:void()" 0->-1 0->0
+"com.google.android.gms.maps.model.MarkerOptions.position:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.android.gms.tasks.Task.getException:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.android.gms.tasks.Task.isSuccessful:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.firebase.auth.FirebaseAuth.addAuthStateListener:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.firebase.auth.FirebaseAuth.createUserWithEmailAndPassword:<unresolvedSignature>(2)" 0->-1 0->0 1->-1 1->1 2->-1 2->2
+"com.google.firebase.auth.FirebaseAuth.getCurrentUser:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.firebase.auth.FirebaseAuth.getInstance:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.firebase.auth.FirebaseAuth.removeAuthStateListener:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.firebase.auth.FirebaseAuth.signInWithEmailAndPassword:<unresolvedSignature>(2)" 0->-1 0->0 1->-1 1->1 2->-1 2->2
+"com.google.firebase.auth.FirebaseUser.getEmail:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.firebase.auth.FirebaseUser.getUid:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.firebase.database.DataSnapshot.getChildren:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.firebase.database.DataSnapshot.getValue:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.firebase.database.DatabaseError.toException:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.firebase.database.DatabaseReference.addListenerForSingleValueEvent:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.firebase.database.DatabaseReference.child:<unresolvedSignature>(1)" 0->-1 0->0 1->-1 1->1
+"com.google.firebase.database.FirebaseDatabase.getInstance:<unresolvedSignature>(0)" 0->-1 0->0
+"com.google.firebase.database.FirebaseDatabase.getReference:<unresolvedSignature>(0)" 0->-1 0->0
+------------------------------------------
+Custom customStringSemantics semantics
+"java.lang.Double.toString:java.lang.String()" 0->-1 0->0 1->-1 1->1
+"java.lang.String.replaceAll:java.lang.String(java.lang.String,java.lang.String)" 0->-1 0->0 1->-1 1->1 2->-1 2->2 3->-1 3->3
+"java.lang.String.substring:java.lang.String(int)" 0->-1 0->0 1->-1 1->1 2->-1 2->2
+"java.text.SimpleDateFormat.format:java.lang.String(java.util.Date)" 0->-1 0->0 1->-1 1->1 2->-1 2->2
+------------------------------------------

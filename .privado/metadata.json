@@ -1,0 +1,19 @@
+{
+  "ResultCode": 0,
+  "operatingSystemInfo": {
+    "name": "Darwin 23.3.0 Darwin Kernel Version 23.3.0: Wed Dec 20 21:30:59 PST 2023; root:xnu-10002.81.5~7/RELEASE_ARM64_T6030",
+    "version": "14.3.0",
+    "architecture": "X64",
+    "processorCount": 11
+  },
+  "systemMemoryInfo": {
+    "memorySizeInGB": 18.0,
+    "swapSizeInGB": 0.0
+  },
+  "systemDiskInfo": {
+    "fileStoreName": "/",
+    "totalSpaceInGB": 460.0,
+    "freeSpaceInGB": 251.0
+  },
+  "appVersion": "Microsoft Application Inspector 1.5.69-beta+a672200ca5"
+}
